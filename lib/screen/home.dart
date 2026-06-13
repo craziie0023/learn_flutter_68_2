@@ -5,18 +5,65 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Image.asset("assets/images/juno.png", width: 200, height: 200),
-        SizedBox(height: 20),
-        Image.network(
-          "https://d1grca2t3zpuug.cloudfront.net/2025/05/chiikawa1-1080x608-1747966765.webp",
-          width: 200,
-          height: 200,
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.pinkAccent),
+            onPressed: () {
+              print("กดปุ่มแล้ว TextButton");
+            },
+            child: Text(
+              "กดปุ่มนี้",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          FilledButton(
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.pinkAccent,
+              foregroundColor: Colors.white,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            ),
+            onPressed: () {
+              print("กดปุ่มแล้ว TextButton");
+            },
+            child: Text(
+              "กดปุ่มนี้",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          OutlinedButton(
+            style: TextButton.styleFrom(
+              side: BorderSide(color: Colors.pinkAccent, width: 2),
+              foregroundColor: Colors.blueAccent,
+            ),
+            onPressed: () {
+              print("กดปุ่มแล้ว TextButton");
+            },
+            child: Text(
+              "กดปุ่มนี้",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.yellowAccent,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              print("กดปุ่มแล้ว TextButton");
+            },
+            child: Text(
+              "กดปุ่มนี้",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
