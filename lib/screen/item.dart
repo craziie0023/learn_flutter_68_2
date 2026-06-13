@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter_68_2/model/person.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -8,7 +9,7 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  List data = ["สมชาย", "สมศรี", "สมปอง", "สมหมาย", "สมจิตร"];
+  List<Person> data = people;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,28 @@ class _ItemState extends State<Item> {
             border: Border.all(color: Colors.pinkAccent),
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Text(
-            data[index],
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "ชื่อ: ${data[index].name}",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "อายุ: ${data[index].age} ปี",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Text(
+                    "อาชีพ: ${data[index].job}",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+              Icon(Icons.person, size: 50, color: Colors.pinkAccent),
+            ],
           ),
         );
       },
