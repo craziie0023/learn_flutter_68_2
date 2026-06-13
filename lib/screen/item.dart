@@ -20,7 +20,7 @@ class _ItemState extends State<Item> {
           margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           padding: const EdgeInsets.all(40),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.pinkAccent),
+            color: people[index].job.color,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
@@ -38,12 +38,17 @@ class _ItemState extends State<Item> {
                     style: TextStyle(fontSize: 16),
                   ),
                   Text(
-                    "อาชีพ: ${data[index].job}",
+                    "อาชีพ: ${data[index].job.title}",
                     style: TextStyle(fontSize: 16),
                   ),
                 ],
               ),
-              Icon(Icons.person, size: 50, color: Colors.pinkAccent),
+              Image.asset(
+                data[index].job.image,
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
             ],
           ),
         );
