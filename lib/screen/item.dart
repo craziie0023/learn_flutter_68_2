@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_68_2/model/person.dart';
-import 'package:google_fonts/google_fonts.dart'
+import 'package:google_fonts/google_fonts.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
